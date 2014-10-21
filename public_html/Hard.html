@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Play Snake Game</title>
+<style>
+    body{
+        background-color: darkgreen;
+    }
+</style>
+<title>Play Snake</title>
 <style type="text/css">
 body {text-align:center;}
 canvas { border:5px dotted #ccc; }
@@ -11,11 +16,11 @@ h1 { font-size:50px; text-align: center; margin: 0; padding-bottom: 25px;}
 <script type="text/javascript">
 function play_game() 
 {
-var level = 160; // Game level, by decreasing will speed up
+var level = 50 // Game level, by decreasing will speed up
 var rect_w = 45; // Width 
 var rect_h = 30; // Height
 var inc_score = 50; // Score
-var snake_color = "#006699"; // Snake Color
+var snake_color = "#2EFEF7"; // Snake Color
 var ctx; // Canvas attributes
 var tn = []; // temp directions storage
 var x_dir = [-1, 0, 1, 0]; // position adjusments
@@ -31,14 +36,23 @@ var interval = 0;
 var score = 0;
 var sum = 0, easy = 0;
 var i, dir;
+
+
+
 // getting play area 
 var c = document.getElementById('playArea');
 ctx = c.getContext('2d');
+
+
+
 // Map positions
 for (i = 0; i < rect_w; i++)
 {
 map[i] = [];
 }
+
+
+
 // random placement of snake food
 function rand_frog() 
 {
@@ -53,6 +67,9 @@ map[x][y] = 1;
 ctx.fillStyle = snake_color;
 ctx.strokeRect(x * 10+1, y * 10+1, 8, 8);
 }
+
+
+
 // Default somewhere placement 
 rand_frog();
 function set_game_speed() 
@@ -80,7 +97,10 @@ inc_score = 50;
 rand_frog();
 frog++;
 }
-//ctx.fillStyle("#ffffff");
+
+
+
+//ctx.fillStyle("##2EFEF7");
 ctx.fillRect(X * 10, Y * 10, 9, 9);
 map[X][Y] = 2;
 queue.unshift([X, Y]);
@@ -132,8 +152,13 @@ sum+= code
 </script>
 </head>
 <body onload="play_game()">
-<h1>Play Snake Game</h1>
+<h1>Play Snake</h1>
+<p>by Andy West</p>
 <div id="msg"></div>
 <canvas id="playArea" width="450" height="300">Sorry your browser does not support HTML5</canvas>
 </body>
+<audio controls autoplay hidden>
+        <source src="Super Hexagon- FULL Soundtrack.mp3" type="audio/mpeg">
+        Your browser does not support the <code>audio</code> tag.
+    </audio>
 </html>
