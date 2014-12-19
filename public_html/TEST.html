@@ -21,7 +21,7 @@
                 var rect_h = 50; // Height
                 var inc_score = 50; // Score
                 var snake_color = "#2EFEF7"; // Snake Color
-                var ctx; // Canvas attributes
+                var ctx; //
                 var tn = []; // temp directions storage
                 var x_dir = [-1, 0, 1, 0]; // position adjusments
                 var y_dir = [0, -1, 0, 1]; // position adjusments
@@ -37,16 +37,15 @@
                 var sum = 0, easy = 0;
                 var i, dir;
 
-                var snd = new Audio("file.wav"); // buffers automatically when created
-                snd.play();
+                
 
-        // getting play area 
+                // getting play area 
                 var c = document.getElementById('playArea');
                 ctx = c.getContext('2d');
 
 
 
-        // Map positions
+                // Map positions
                 for (i = 0; i < rect_w; i++)
                 {
                     map[i] = [];
@@ -54,7 +53,7 @@
 
 
 
-        // random placement of snake food
+                // random placement of snake food
                 function rand_frog()
                 {
                     var x, y;
@@ -71,7 +70,7 @@
 
 
 
-        // Default somewhere placement 
+                // Default somewhere placement 
                 rand_frog();
                 function set_game_speed()
                 {
@@ -101,7 +100,7 @@
 
 
 
-        //ctx.fillStyle("##2EFEF7");
+                        //ctx.fillStyle("##2EFEF7");
                         ctx.fillRect(X * 10, Y * 10, 9, 9);
                         map[X][Y] = 2;
                         queue.unshift([X, Y]);
